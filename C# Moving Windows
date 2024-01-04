@@ -1,0 +1,20 @@
+  private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            move = 1;
+            start_point =new Point (e.X, e.Y);
+        }
+
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(move==1)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
+
+            }
+        }
+
+        private void panel7_MouseUp(object sender, MouseEventArgs e)
+        {
+            move = 0;
+        }
